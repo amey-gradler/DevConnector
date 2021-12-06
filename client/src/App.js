@@ -19,12 +19,14 @@ import AddEducation from './components/profile-forms/AddEducation';
 
 import Profiles from './components/profiles/Profiles';
 
+import Profile from './components/profile/Profile';
 //redux
 import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
 import './App.css';
 import setAuthToken from './utils/setAuthToken';
+import { render } from 'react-dom';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -48,6 +50,8 @@ const App = () => {
             <Alert />
             <Routes>
               <Route exact path='/profiles' element={<Profiles />} />
+
+              <Route path='/profile/:id' element={<Profile />} />
 
               <Route exact path='/dashboard' element={<PrivateRoute />}>
                 <Route exact path='/dashboard' element={<Dashboard />} />

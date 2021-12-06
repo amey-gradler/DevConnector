@@ -13,6 +13,7 @@ import {
 //get current users profile
 export const getCurrentProfile = () => async (dispatch) => {
   try {
+    console.log('here');
     const res = await axios.get('/api/profile/me');
 
     dispatch({
@@ -53,8 +54,8 @@ export const getProfiles = () => async (dispatch) => {
   }
 };
 
-//get profile by ID
-export const getProfileBYId = (userId) => async (dispatch) => {
+//Get  profile by id
+export const getProfileById = (userId) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/profile/user/${userId}`);
 
@@ -62,13 +63,10 @@ export const getProfileBYId = (userId) => async (dispatch) => {
       type: GET_PROFILE,
       payload: res.data,
     });
-  } catch (error) {
+  } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: {
-        msg: error.response.statusText,
-        status: error.response.status,
-      },
+      payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
 };
