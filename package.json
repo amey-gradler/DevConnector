@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "social network",
   "main": "server.js",
-  "homepage": "/build",
   "scripts": {
     "start": "node server",
     "server": "nodemon server --ignore client",
