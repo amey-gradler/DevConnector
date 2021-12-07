@@ -20,6 +20,9 @@ import AddEducation from './components/profile-forms/AddEducation';
 import Profiles from './components/profiles/Profiles';
 
 import Profile from './components/profile/Profile';
+
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 //redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -79,6 +82,14 @@ const App = () => {
 
               <Route exact path='/add-education' element={<PrivateRoute />}>
                 <Route exact path='/add-education' element={<AddEducation />} />
+              </Route>
+
+              <Route exact path='/posts' element={<PrivateRoute />}>
+                <Route exact path='/posts' element={<Posts />} />
+              </Route>
+
+              <Route exact path='/posts/:id' element={<PrivateRoute />}>
+                <Route exact path='/posts/:id' element={<Post />} />
               </Route>
 
               <Route exact path='/register' element={<Register />} />

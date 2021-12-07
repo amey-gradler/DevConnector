@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://ameya:Ameya%402002@devconnector.gjyi8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "secret",
+  "githubSecret": "4547b509214eac9ac3f3f38f7145b5d185c9d4f3",
+  "githubClientID": "Iv1.ca9dd68b9652e826"
+}
